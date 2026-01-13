@@ -1,0 +1,51 @@
+====================================================================
+SCHEDULE A – COMMUNITY EDITION
+====================================================================
+
+This Schedule A governs use of the Software when licensed as the
+Community Edition and forms part of the Master Software License
+Agreement.
+
+1. PERMITTED USE
+
+The Community Edition is licensed for personal, educational,
+non-commercial, and evaluation use only.
+
+Licensee may deploy and operate the Software on Authorized Servers
+provided that such servers do not generate revenue, directly or
+indirectly, and are not operated for commercial purposes.
+
+Permitted uses include, but are not limited to:
+- Personal or hobby Minecraft servers
+- Educational or academic environments
+- Testing, development, and evaluation purposes
+- Non-commercial public or private servers
+
+2. PROHIBITED USE
+
+The following uses are expressly prohibited under the Community
+Edition:
+
+- Operation of monetized or commercial servers
+- Acceptance of donations, subscriptions, paid access, or other forms
+  of revenue related to server operation
+- Use by or for commercial hosting providers
+- Redistribution, sublicensing, or resale of the Software
+- Modification, decompilation, or reverse engineering of the Software
+- Use of the Software as part of another distributed product or service
+- Access to or use of Pro Edition or Enterprise Edition features,
+  modules, or functionality
+
+3. EDITION LIMITATIONS
+
+The Community Edition may include performance limits, feature caps,
+or technical restrictions as defined by Licensor. Such limits may be
+enforced through configuration, licensing, or technical controls.
+
+4. VERSION SCOPE
+
+This Schedule applies only to the specific Version of the Software
+distributed as the Community Edition. No rights are granted to future
+Versions, updates, or other Editions.
+
+END OF SCHEDULE A – COMMUNITY EDITION
