@@ -1,97 +1,120 @@
-# PulseThread SIS — Community Edition
+# PulseThread SIS (Community Edition)
+
+PulseThread SIS is a **synchronous-first execution and coordination framework**
+for Minecraft servers.
+
+It exists to solve a specific problem:  
+when multiple heavy systems (AI, generation, structures, datapacks, physics)
+compete for main-thread or region-thread time, performance collapses in
+unpredictable ways.
+
+PulseThread provides a **shared execution pipeline** that cooperative plugins
+stage work into, instead of each plugin trying to manage load independently.
+
+This is not a one-click optimizer and not a universal async engine.
+
+PulseThread SIS is currently in active development. Behavior, defaults, and
+limits may continue to evolve as additional real-world testing is performed.
+
+---
+
+## What PulseThread Does
+
+PulseThread centralizes:
+- task staging
+- batching
+- rate limiting
+- fairness
+- safety enforcement
+- recovery under pressure
+
+Instead of plugins deciding *when* to run heavy work, PulseThread decides
+**if and how much** work may run at any given moment.
+
+At runtime, the system continuously answers:
+
+> How much work can safely execute right now without harming gameplay?
+
+---
+
+## Execution Model (Sync-First)
+
+PulseThread is intentionally **synchronous-first**.
+
+Heavy computation is performed asynchronously, but **all world mutation is
+applied synchronously or on region-safe threads**, routed through a single
+execution authority.
+
+There are no unsafe async Bukkit mutation paths.
+
+---
+
+## Architecture Overview
+
+PulseThread SIS is structured as a strict pipeline:
+
+- **PulseHook** — discovery and staging only  
+- **PulseRuntime** — policy and safety gating  
+- **PulseThreadCore** — execution authority and throughput control  
+
+Responsibilities are intentionally separated and not collapsed.
+
+---
+
+## Constraints (By Design)
+
+PulseThread enforces hard safety boundaries:
+
+- No async world mutation
+- No collapsing of Hook, Runtime, or Core roles
+- No unsafe Folia region bypass
+- No unbounded backlog drain
+- No forced execution under unsafe conditions
+
+These constraints are enforced automatically by runtime gates and governor logic.
+Plugin integrations declare intent; PulseThread decides if and when execution is
+permitted.
+
+---
+
+## Repository Scope
 
 This repository contains **public reference material** for the
-**PulseThread SIS (Community Edition)** project.
+PulseThread SIS Community Edition, including:
 
-It is intended to provide:
-- Licensing terms for the Community Edition
-- Command references for administrators
-- Public API and integration notes for developers
+- Command reference (`COMMANDS.txt`)
+- Public API and integration notes
+- Licensing terms and schedules
+- Legal notices
 
-No source code or compiled binaries are distributed here.
+No source code, compiled binaries, or build artifacts are provided here.
 
----
-
-## Purpose
-
-PulseThread SIS is a modular execution, scheduling, and governance
-framework for Minecraft servers.
-
-This repository exists to document:
-- How the Community Edition may be used (license terms)
-- What commands are available and how they behave
-- How plugin developers may integrate with the PulseThread execution
-  pipeline using the public APIs
-
-It is **not** a source repository and **not** a build repository.
+PulseThread SIS software is distributed separately via official release channels.
 
 ---
 
-## What This Repository Contains
+## Notes for Developers
 
-- **Community Edition license text and schedules**
-- **NOTICE and legal metadata**
-- **COMMANDS.txt**  
-  Operator-facing command reference for PulseThread SIS
-- **API and developer notes**  
-  Public integration guidance and architectural context
+This project is intentionally constrained and architecture-locked.
 
-These documents describe behavior and interfaces but do not include
-implementation code.
+Developers are encouraged to:
+- review the execution model
+- evaluate the constraints
+- test integrations
+- provide feedback after real-world usage
 
----
+Internal design notes and evolving project state are documented in:
 
-## What This Repository Does *Not* Contain
-
-- Java source code
-- Compiled plugin JARs
-- Build scripts or tooling
-- Internal or proprietary implementation details
-
-The PulseThread SIS software itself is distributed separately.
+- `NOTES.md`
 
 ---
 
-## Software Distribution
-
-PulseThread SIS binaries are distributed through official release
-channels, including:
-
-- Modrinth (plugin releases)
-- Official distribution links referenced in release announcements
-
-Refer to those sources for installation instructions and runtime usage.
-
----
-
-## Scope of Documentation
-
-The documentation in this repository reflects the **current public
-behavior and APIs** of the Community Edition.
-
-Some features, limits, and behaviors may differ in Pro or Enterprise
-editions and are governed by their respective license terms.
-
-Documentation may evolve as the project continues to be tuned and
-stabilized.
-
----
-
-## Legal Notice
+## Legal
 
 PulseThread SIS is authored and maintained by
-**PerfectPriceProjectsLLC**, distributed under the trade name
-**WhiskeyMC**.
+**PerfectPriceProjectsLLC**, distributed under the trade name **WhiskeyMC**.
 
-Use of the software is governed exclusively by the applicable license
-terms and schedules contained in this repository and included with
-the software distribution.
+Use of the software is governed by the applicable license terms and schedules
+included in this repository and with the software distribution.
 
----
-
-## Support
-
-This repository is not intended for issue tracking or technical support.
-
-For usage questions, testing feedback, or release information, refer to
-the official distribution channels associated with PulseThread SIS.
+See `NOTICE` for copyright and trademark information.
