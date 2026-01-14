@@ -1,0 +1,158 @@
+PulseThread SIS — Commands Reference
+
+
+================================================================================
+COMMAND LIST (QUICK REFERENCE)
+================================================================================
+
+
+PulseThread (Community)
+----------------------
+
+PulseThreadCore
+- /pulsethread
+- /pulsethread help
+- /pulsethread status
+- /pulsethread pools
+- /pulsethread players
+- /pulsethread governor
+- /pulsethread mode <normal | aggressive | degraded | safe | clear>
+- /pulsethread dump
+- /pulsethread reload
+
+PulseHook
+- /pulsehook
+- /pulsehook reload
+
+
+PulseThread (Pro)
+-----------------
+
+Includes all Community commands, plus:
+
+PulseThreadCore
+- /pulsethread turbo <world>
+- /pulsethread boost
+
+PulseWorld
+- /pulseworld
+- /pulseworld health
+- /pulseworld reload
+
+
+PulseThread (Enterprise)
+------------------------
+
+Includes all Community and Pro commands, plus:
+
+PulseHealth
+- /pulsehealth
+- /pulsehealth overview
+- /pulsehealth export
+- /pulsehealth reload
+
+Policy / Advanced
+- /pulsethread policy reload
+
+
+================================================================================
+COMMAND DETAILS
+================================================================================
+
+
+PulseThreadCore (Community)
+---------------------------
+
+/pulsethread
+- Default command (same as /pulsethread status)
+
+/pulsethread help
+- Prints available subcommands
+
+/pulsethread status
+- Displays runtime status (governor state, queues, pressure signals)
+
+/pulsethread pools
+- Displays thread pool sizing and targets
+
+/pulsethread players
+- Displays player-related execution and fairness data
+
+/pulsethread governor
+- Displays current governor state and overrides
+
+/pulsethread mode <normal | aggressive | degraded | safe | clear>
+- Sets preferred mode or applies/clears overrides
+
+/pulsethread dump
+- Writes a diagnostic dump to plugins/PulseThreadCore/debug/
+
+/pulsethread reload
+- Best-effort reload of PulseThreadCore configuration
+
+
+PulseHook (Community)
+---------------------
+
+/pulsehook
+- Displays discovered hook plugins and integration state
+
+/pulsehook reload
+- Reloads PulseHook configuration and refreshes discovery
+
+
+PulseThreadCore (Pro additions)
+-------------------------------
+
+/pulsethread turbo <world>
+- Temporarily biases throughput toward a specific world
+- Credit-based and auto-aborts under SAFE
+
+/pulsethread boost
+- Legacy alias for /pulsethread turbo
+
+
+PulseWorld (Pro)
+----------------
+
+/pulseworld
+- Default command (same as /pulseworld health)
+
+/pulseworld health
+- Displays world-level execution and health information
+
+/pulseworld reload
+- Reloads PulseWorld configuration
+
+
+PulseHealth (Enterprise)
+------------------------
+
+/pulsehealth
+- Default command (same as /pulsehealth overview)
+
+/pulsehealth overview
+- Displays health and analytics overview
+
+/pulsehealth export
+- Exports health data if enabled
+
+/pulsehealth reload
+- Reloads PulseHealth configuration
+
+
+Enterprise Policy
+-----------------
+
+/pulsethread policy reload
+- Reloads policy and enforcement configuration
+
+
+================================================================================
+NOTES
+================================================================================
+
+- Commands influence policy and throughput intent only.
+- Commands never force unsafe execution.
+- Safety and backpressure enforcement always remain authoritative.
+- Higher editions include all commands from lower editions.
