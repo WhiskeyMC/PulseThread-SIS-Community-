@@ -1,0 +1,22 @@
+NOTICE
+
+PulseThread SIS
+Copyright © 2025 PerfectPriceProjectsLLC
+
+PulseThread SIS is authored, maintained, and distributed by
+PerfectPriceProjectsLLC under the trade name “WhiskeyMC”.
+
+“PulseThread SIS”, “PulseThread”, “PulseRuntime”, “PulseHook”,
+“PulseAI”, “PulseGen”, “PulseWorld”, and “PulseHealth” are
+trademarks or pending trademarks of PerfectPriceProjectsLLC.
+
+All rights not expressly granted are reserved.
+
+This NOTICE file does not grant any license to the software.
+Use of this software is governed solely by the applicable
+license agreement and schedule provided with the distribution.
+
+Unauthorized use of the trademarks, branding, or associated
+names is prohibited without prior written permission.
+
+END OF NOTICE
