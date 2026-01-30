@@ -1,4 +1,4 @@
-PulseThread SIS (Community)
+**PulseThread SIS (Community)**
 
 PulseThread SIS is a workload coordination and execution framework for Minecraft servers. It is designed to be hooked into by other plugins to safely stage, govern, and execute heavy or disruptive work without overwhelming the main thread or region threads.
 
@@ -7,14 +7,14 @@ Rather than acting as a standalone optimizer, PulseThread provides a shared exec
 PulseThread SIS is designed as a coordinated system rather than a single plugin. Most real functionality is delivered through companion plugins that integrate into the shared execution pipeline. This allows complex or expensive systems to operate under a unified execution model instead of fragmenting server resources.
 
 
-SIS Plugin Architecture Overview
+**SIS Plugin Architecture Overview**
 
 PulseThread SIS is composed of a core execution pipeline and a set of optional domain modules. Not all modules are included in every edition. Availability, limits, and behavior are governed by the applicable license Schedule A.
 
 At a high level, all editions share the same execution and safety foundation. Higher editions primarily expand limits, policy flexibility, and optional modules rather than changing core behavior.
 
 
-Core Runtime Plugins (All Editions)
+**Core Runtime Plugins (All Editions)**
 
 These plugins form the mandatory execution pipeline and are always present in operational deployments:
 
@@ -28,12 +28,12 @@ PulseHook
 Discovery and staging layer. Integrates with cooperative plugins, enforces quotas and ownership, and stages work into Runtime without executing it directly.
 
 
-Optional SIS Modules (Edition-Dependent)
+**Optional SIS Modules (Edition-Dependent)**
 
 The following companion plugins extend the core runtime and are enabled based on license tier and deployment requirements:
 
 
-Community / Pro (limited or policy-gated in Community)
+**Community / Pro (limited or policy-gated in Community)**
 
 PulseGen  
 Offloading and coordination for generation-heavy workloads, structure placement, and chunk-adjacent computation.
@@ -44,7 +44,7 @@ Entity, AI, and behavior task coordination with batching, rate limiting, and gov
 PulseAI stages entity processing, perception, and ray-based queries as first-class workload units within the shared execution pipeline. AI and perception workloads are validated by Runtime, batched and rate-limited by Core, and applied synchronously under normal execution gates. This avoids ad-hoc AI execution paths and ensures consistent behavior under mixed load.
 
 
-Client-Side Execution Modules (Optional)
+**Client-Side Execution Modules (Optional)**
 
 PulseFabric Client  
 Standalone Fabric client-side execution surface for PulseThread SIS.
@@ -58,7 +58,7 @@ PulseFabric Client is designed to integrate into the same shared execution and p
 Installation of the Fabric client is optional. When no compatible server requests offloaded work, the client remains idle and does not alter gameplay.
 
 
-Enterprise Only
+**Enterprise Only**
 
 PulseWorld  
 World-level health, lifecycle control, and integrity management, including recovery and enforcement mechanisms.
@@ -71,7 +71,7 @@ Custom governors, override hooks, and integration allowances beyond public confi
 
 Not all modules listed above are included in the Community edition. Redistribution, commercial use, and module availability are governed by the applicable license and Schedule A.
 
-Editions
+**Editions**
 
 Community Edition
 
@@ -89,7 +89,9 @@ Enterprise deployments are handled on a per-organization basis. Enterprise licen
 
 Enterprise terms are negotiated individually and are not publicly documented at this time.
 
-PulseThread — Technical Overview (v9.0)
+
+
+**PulseThread — Technical Overview (v9.0)**
 
 Status: FEATURE-COMPLETE / ARCHITECTURE-LOCKED  
 Phase: ALPHA 9.0  
@@ -105,7 +107,7 @@ Version 9.1 existed as an internal stabilization and consolidation pass. Work du
 
 Version 9.2 completes the remaining planned feature surface area on top of the locked v9.0 architecture. Changes in this release are the result of feature activation, wiring, and integration rather than architectural change. Behavioral differences reflect improved signal quality, reduced latency, and more complete utilization of the existing execution pipeline.
 
-Executive Summary
+**Executive Summary**
 
 PulseThread is a performance, stability, and fairness control layer for Minecraft servers.
 
@@ -125,7 +127,7 @@ PulseThread is not a magic compatibility layer and does not attempt to fix non-c
 This document reflects the consolidated implementation carried forward into v9.0 and extended through subsequent feature completion.
 
 
-Design Goals
+**Design Goals**
 
 Primary goals
 - Reduce main-thread and region-thread pressure safely
@@ -212,7 +214,7 @@ Core answers:
 How much work should execute right now, where should it run, and under what budget?
 
 
-Core Features (Implemented / Stable)
+**Core Features (Implemented / Stable)**
 
 Dynamic Thread Pools
 
@@ -247,7 +249,7 @@ Additional Core Capabilities
 - No unsafe async world mutation paths introduced
 
 
-Additional Systems Completed (v9.1–v9.2)
+**Additional Systems Completed (v9.1–v9.2)**
 
 The v9.1–v9.2 series completes the remaining planned feature surface on top of the locked v9.0 architecture. Changes during this phase focus on correctness, consistency, and full utilization of the existing execution pipeline rather than architectural expansion.
 
@@ -319,7 +321,7 @@ TURBO is a temporary, per-world burst mode rather than a persistent governor mod
 BOOST remains a legacy alias for TURBO.
 
 
-PulsePolicy Integration
+**PulsePolicy Integration**
 
 Governor modes define baseline execution intent, but final behavior is always constrained by PulsePolicy.
 
@@ -421,3 +423,4 @@ Known Issues
 
 Thank you, and much love  
 WhiskeyMC @ PerfectPriceProjectsLLC
+
